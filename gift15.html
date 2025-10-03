@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift 16 – Unlock Me!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dff6ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      border: 3px solid #1d3557;
+    }
+
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #1d3557, #f4c542);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      font-size: 5rem;
+      margin: 20px 0;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 2px solid #1d3557;
+      border-radius: 10px;
+      width: 70%;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background: #1d3557;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    .hidden-content {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #f4f4f4;
+      border-radius: 15px;
+      border: 2px dashed #1d3557;
+    }
+
+    .award {
+      background: #fff8dc;
+      padding: 20px;
+      border: 2px solid #f4c542;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .award h3 {
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .award p {
+      margin: 5px 0;
+    }
+
+    .download-btn {
+      margin-top: 15px;
+      background: #1d3557;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      background: #1d3557;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎁 Unlock Me!</h1>
+    <div class="box">🔒</div>
+    <p>Enter the secret code to reveal the surprise:</p>
+    <input type="text" id="codeInput" placeholder="Enter code here" />
+    <br>
+    <button class="btn" onclick="checkCode()">Unlock</button>
+
+    <div id="hiddenContent" class="hidden-content">
+      <h2>🎉 Surprise!</h2>
+      <p>This was hidden... but not anymore 😏</p>
+
+      <div class="award">
+        <h3>🏅 Secret Code Master</h3>
+        <p>You unlocked a gift that no one else could.</p>
+        <p>Level: <strong>Hacker of Hearts 💙</strong></p>
+        <button class="download-btn" onclick="downloadBadge()">🎉 Download Your Achievement</button>
+      </div>
+    </div>
+
+    <a class="back-button" href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value.trim();
+      const correctCode = "AA!1507&2009";
+
+      if (input === correctCode) {
+        document.getElementById("hiddenContent").style.display = "block";
+      } else {
+        alert("Wrong code! Try again 👀");
+      }
+    }
+
+    function downloadBadge() {
+      const link = document.createElement('a');
+      link.href = 'badge.png'; // You can replace this with your actual image path
+      link.download = 'Secret_Code_Master_Badge.png';
+      link.click();
+    }
+  </script>
+</body>
+</html>

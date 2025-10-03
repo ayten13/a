@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gift 12 – Treasure Hunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f0f8ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gift-card {
+      background: white;
+      border: 3px solid #1d3557;
+      border-radius: 20px;
+      padding: 30px;
+      width: 850px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .gift-title {
+      font-size: 2.4rem;
+      color: #f4c542;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .puzzle {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #1d3557;
+    }
+
+    .input-container {
+      margin-top: 15px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      width: 60%;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    .clue {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      color: #333;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px dashed #1d3557;
+      display: none;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #1d3557;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+      border-color: #1d3557;
+    }
+
+    .signature {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: #1d3557;
+      margin-top: 25px;
+    }
+
+    .decorations {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-card">
+    <div class="decorations">🗝️🧠</div>
+    <div class="gift-title">Treasure Hunt Time!</div>
+
+    <div class="puzzle" id="step1">
+      <p>🔍 Clue 1: I have four wheels and a G in my name. What am I?</p>
+      <div class="input-container">
+        <input type="text" id="answer1" placeholder="Type your answer here" />
+        <button onclick="checkAnswer1()">Submit</button>
+      </div>
+    </div>
+
+    <div class="clue" id="step2">
+      ✅ Correct!  
+      <br /><br />
+      🔍 Clue 2: You hear me through your ears. I’m your favorite playlist, but what app am I on?
+      <div class="input-container">
+        <input type="text" id="answer2" placeholder="Type your answer here" />
+        <button onclick="checkAnswer2()">Submit</button>
+      </div>
+    </div>
+
+    <div class="clue" id="step3">
+      ✅ You got it!  
+      <br /><br />
+      🔍 Final Clue: The more you take away from me, the bigger I get. What am I?
+      <div class="input-container">
+        <input type="text" id="answer3" placeholder="Type your answer here" />
+        <button onclick="checkAnswer3()">Finish</button>
+      </div>
+    </div>
+
+    <div class="clue" id="finalMessage" style="font-weight:bold;">
+      🎉 You did it!!  
+      You're officially the **Treasure Hunter of the Year** 🏆  
+      <br /><br />
+      👉 Go claim your final surprise <a href="gift13.html" style="color:#1d3557; font-weight:bold;">here</a>!
+    </div>
+
+    <div class="signature">Ayten 💜</div>
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+
+  <script>
+    function checkAnswer1() {
+      const a = document.getElementById("answer1").value.toLowerCase().trim();
+      if (a.includes("g class") || a.includes("g-class") || a.includes("g")) {
+        document.getElementById("step2").style.display = "block";
+      }
+    }
+
+    function checkAnswer2() {
+      const a = document.getElementById("answer2").value.toLowerCase().trim();
+      if (a === "spotify") {
+        document.getElementById("step3").style.display = "block";
+      }
+    }
+
+    function checkAnswer3() {
+      const a = document.getElementById("answer3").value.toLowerCase().trim();
+      if (a === "hole") {
+        document.getElementById("finalMessage").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

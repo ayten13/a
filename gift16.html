@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift 17 – Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      background: white;
+      border: 3px solid #1d3557;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .cake {
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .cake img {
+      width: 250px;
+      animation: pop 1s ease-in-out forwards;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .celebrate-btn {
+      margin-top: 20px;
+      background: #1d3557;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .celebrate-btn:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      background: #1d3557;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <canvas class="confetti" id="confetti"></canvas>
+
+  <div class="card">
+    <div class="cake" id="cake">
+      <img src="images\Happy 16th Birthday - Free Vector Download.jpeg" alt="Birthday Cake 16">
+    </div>
+    <button class="celebrate-btn" onclick="celebrate()">🎉 Click to Celebrate 🎉</button>
+    <a class="back-button" href="index.html">← Back to Home</a>
+  </div>
+
+  <audio id="bdayMusic" src="audio\happy-birthday-322777.mp3" preload="auto"></audio>
+
+  <script>
+    function celebrate() {
+      document.getElementById("cake").style.display = 'block';
+      document.getElementById("bdayMusic").play();
+      startConfetti();
+      document.querySelector('.celebrate-btn').style.display = 'none';
+    }
+
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let pieces = [];
+    const colors = ["#f4c542", "#1d3557", "#00b4d8", "#ff006e", "#00ff99"];
+
+    for (let i = 0; i < 300; i++) {
+      pieces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 10 + 2,
+        speed: Math.random() * 3 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+
+    function startConfetti() {
+      setInterval(() => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.y += p.speed;
+          if (p.y > canvas.height) {
+            p.y = 0;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+        });
+      }, 30);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gift 3 – Custom Wallpaper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f0f8ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gift-card {
+      background: white;
+      border: 3px solid #1d3557;
+      border-radius: 20px;
+      padding: 30px;
+      width: 850px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .gift-title {
+      font-size: 2.6rem;
+      color: #f4c542;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .wallpaper-preview {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid #1d3557;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+}
+
+
+    .signature {
+      text-align: right;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: #1d3557;
+      margin-top: 15px;
+    }
+
+    .decorations {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #1d3557;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+      border-color: #1d3557;
+    }
+
+   .download-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #1d3557;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background: #f4c542;
+  color: #1d3557;
+  border-color: #1d3557;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="gift-card">
+    <div class="decorations">📱🎨</div>
+    <div class="gift-title">Custom Wallpaper</div>
+    <p class="description">
+      A special wallpaper just for you!<br>
+      Designed with love, to keep a smile on your screen every day 💫
+    </p>
+
+    <!-- ✅ استبدلي رابط الصورة هنا بعد ما تصمميها -->
+   <img src="images/abi.png" alt="Custom Wallpaper Preview" class="wallpaper-preview" />
+
+<div style="margin-top: 10px;">
+  <a href="images/abi.png" download class="download-button">⬇️ Download Wallpaper</a>
+</div>
+
+
+
+    <div class="signature">Ayten 💜</div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Best Friend Gifts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e6f0ff, #ffffff);
+      min-height: 100vh;
+      padding: 60px 20px;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: #f4c542;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+      padding: 10px;
+    }
+
+    .gift-button {
+      display: block;
+      padding: 20px;
+      background: linear-gradient(145deg, #1d3557, #2f5fa1);
+      color: white;
+      text-decoration: none;
+      border-radius: 16px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+    }
+
+    .gift-button::after {
+      content: "🎉";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 1.2rem;
+      animation: bounce 1.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .gift-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+      border-color: #1d3557;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 60px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎁 Surprise Gifts for My Best Friend 🎊</h1>
+    <div class="grid">
+      <a href="gift1.html" class="gift-button">Gift 1</a>
+      <a href="gift2.html" class="gift-button">Gift 2</a>
+      <a href="gift3.html" class="gift-button">Gift 3</a>
+      <a href="gift4.html" class="gift-button">Gift 4</a>
+      <a href="gift5.html" class="gift-button">Gift 5</a>
+      <a href="gift6.html" class="gift-button">Gift 6</a>
+      <a href="gift7.html" class="gift-button">Gift 7</a>
+      <a href="gift8.html" class="gift-button">Gift 8</a>
+      <a href="gift9.html" class="gift-button">Gift 9</a>
+      <a href="gift10.html" class="gift-button">Gift 10</a>
+      <a href="gift11.html" class="gift-button">Gift 11</a>
+      <a href="gift12.html" class="gift-button">Gift 12</a>
+      <a href="gift13.html" class="gift-button">Gift 13</a>
+      <a href="gift14.html" class="gift-button">Gift 14</a>
+      <a href="gift15.html" class="gift-button">Gift 15</a>
+      <a href="gift16.html" class="gift-button">Gift 16</a>
+    </div>
+
+    <div class="footer">
+      Made with 💙 & ✨ by Ayten
+    </div>
+  </div>
+</body>
+</html>

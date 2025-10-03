@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gift 11 – Secret Message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f0f8ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gift-card {
+      background: white;
+      border: 3px solid #1d3557;
+      border-radius: 20px;
+      padding: 30px;
+      width: 850px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .gift-title {
+      font-size: 2.4rem;
+      color: #f4c542;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .morse-code {
+      font-size: 1.5rem;
+      font-family: monospace;
+      color: #1d3557;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px dashed #1d3557;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: #1d3557;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 20px;
+      background: #1d3557;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+      border-color: #1d3557;
+    }
+
+    .decorations {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-card">
+    <div class="decorations">🔐🕵️</div>
+    <div class="gift-title">Secret Message</div>
+
+    <!-- ✅ Morse Code for "YOU ARE THE BEST ASSER" -->
+    <div class="morse-code">
+      -.-- --- ..- / .- .-. . / - .... . / -... . ... - / .- ... ... . .-.
+    </div>
+
+    <div class="signature">Ayten 💜</div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <!-- ✅ Morse Code Sound -->
+    <audio id="morseAudio" autoplay>
+      <source src="audio\morsecode_nqlu3rdjbmv0h9e3ed2m893vgt.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gift 10 – Which Asser Are You?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f0f8ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gift-card {
+      background: white;
+      border: 3px solid #1d3557;
+      border-radius: 20px;
+      padding: 30px;
+      width: 850px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .gift-title {
+      font-size: 2.4rem;
+      color: #f4c542;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .question p {
+      font-weight: bold;
+      color: #1d3557;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1d3557;
+      display: none;
+    }
+
+    .get-result-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .get-result-btn:hover {
+      background: #f4c542;
+      color: #1d3557;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 10px 20px;
+      background: #1d3557;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .back-button:hover {
+      background: #f4c542;
+      color: #1d3557;
+      border-color: #1d3557;
+    }
+
+    .decorations {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-card">
+    <div class="decorations">🎮💙</div>
+    <div class="gift-title">Which Asser Are You Today?</div>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What’s your vibe today?</p>
+        <label><input type="radio" name="q1" value="a" required> Chill and quiet</label>
+        <label><input type="radio" name="q1" value="b"> Funny and talkative</label>
+        <label><input type="radio" name="q1" value="c"> Adventurous and ready to go!</label>
+      </div>
+
+      <div class="question">
+        <p>2. What would you rather do right now?</p>
+        <label><input type="radio" name="q2" value="a" required> Watch a documentary</label>
+        <label><input type="radio" name="q2" value="b"> Scroll memes</label>
+        <label><input type="radio" name="q2" value="c"> Go for a drive</label>
+      </div>
+
+      <div class="question">
+        <p>3. What’s your mood?</p>
+        <label><input type="radio" name="q3" value="a" required> Deep thinker 🤔</label>
+        <label><input type="radio" name="q3" value="b"> Social butterfly 🦋</label>
+        <label><input type="radio" name="q3" value="c"> Explorer on the move 🌍</label>
+      </div>
+
+      <button type="button" class="get-result-btn" onclick="getResult()">Get Result</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+
+  <script>
+    function getResult() {
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+
+      if (!q1 || !q2 || !q3) return;
+
+      const combo = q1 + q2 + q3;
+
+      let resultText = "";
+
+      if (combo.includes("a")) {
+        resultText = "You're Asser the Philosopher 🧠 – Calm, wise, and full of deep thoughts!";
+      }
+      if (combo.includes("b") && !combo.includes("c")) {
+        resultText = "You're Asser the Comedian 😂 – Always making people laugh and smile!";
+      }
+      if (combo.includes("c")) {
+        resultText = "You're Asser the Explorer 🌍 – Brave, curious, and always ready for adventure!";
+      }
+
+      document.getElementById("result").innerText = resultText;
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
